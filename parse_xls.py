@@ -14,8 +14,6 @@ def read_column_as_date(book, sheet, column_index, kind, day_of_the_weeks=None):
             break
         now = dt.now()
         current_year = now.year - 1 if now.month <= 3 else now.year
-        # 29年度番のカレンダーだったので、一年足す
-        current_year += 1
         if isinstance(c.value, str):
             month_day = c.value.replace('○', '').replace('日', '').split('月')
             month = int(month_day[0])
@@ -66,6 +64,8 @@ def parse_as_object(path):
 
     for sheet_name in book.sheet_names():
         if not sheet_name.isnumeric():
+            continue
+        if int(sheet_name) >= 26:
             continue
         sheet = book.sheet_by_name(sheet_name)
         calendar_list = []
