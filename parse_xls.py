@@ -12,19 +12,7 @@ def read_column_as_date(book, sheet, column_index, kind, day_of_the_weeks=None):
         c = sheet.cell(i, column_index)
         if not c.value:
             break
-        now = dt.now()
-        current_year = now.year - 1 if now.month <= 3 else now.year
-        if isinstance(c.value, str):
-            month_day = c.value.replace('○', '').replace('日', '').split('月')
-            month = int(month_day[0])
-            day = int(month_day[1])
-        else:
-            date = dt(*xlrd.xldate_as_tuple(c.value, book.datemode))
-            day = date.day
-            month = date.month
-        # yearは入力時点のものがはいっているので、置き換える
-        year = current_year + 1 if month <= 3 else current_year
-        d = dt(year=year, month=month, day=day)
+        d = dt(*xlrd.xldate_as_tuple(c.value, book.datemode))
         if len(calendar_list) > 2 and kind == '可燃':
             expected_day = _get_expected_day(calendar_list[-1]['date'], day_of_the_weeks)
             if expected_day and d.date() != expected_day.date():
