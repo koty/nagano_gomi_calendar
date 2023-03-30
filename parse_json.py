@@ -7,8 +7,8 @@ import sys
 
 def read_column_as_date(json, kind_index, kind):
     calendar_list = []
-    kind_dic = json[f'http://linkdata.org/resource/rdf1s9118i#{kind_index}']
-    date_str_list = [k.replace('http://linkdata.org/property/rdf1s9118i#','').replace('%2000%3A00%3A00','') for k in  kind_dic.keys()][3:]
+    kind_dic = json[f'http://linkdata.org/resource/rdf1s9846i#{kind_index}']
+    date_str_list = [k.replace('http://linkdata.org/property/rdf1s9846i#','').replace('%2000%3A00%3A00','') for k in  kind_dic.keys()][3:]
     day_of_the_weeks = _get_day_of_the_weeks(date_str_list)
     for date_str in date_str_list:
         d = dt.strptime(date_str, '%Y-%m-%d')
@@ -44,7 +44,7 @@ def parse_as_object():
 
     calendar_dic = {}  # key: カレンダーNo、value, GomiCalendarレコード
     for i in range(1, 25):
-        res = requests.get(f'http://linkdata.org/api/1/rdf1s9118i/gomi_calendar_2022_{i:02}_rdf.json')
+        res = requests.get(f'http://linkdata.org/api/1/rdf1s9846i/gomi_calendar_2023_{i:02}_rdf.json')
         json = res.json()
         calendar_list = []
 
