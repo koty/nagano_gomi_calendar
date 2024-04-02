@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8"/>
+	<title>長野市ごみ収集カレンダーデータ</title>
+</head>
+<body>
+<h1>長野市ごみ収集カレンダーデータ</h1>
+<p>
+2024年度のごみ収集カレンダーデータです。
+</p>
+<p>
+<a href="http://linkdata.org/work/rdf1s10208i" target="_blank">こちら</a>のデータをJSONにparseしました。自己責任でご利用ください。
+</p>
+
+<p>
+  カレンダーファイル：<a href="gomi_calendar.json" target="_blank">gomi_calendar.json</a> <span>（注）not_available: true が設定されている日は通常であれば回収があるはずの日だけど回収しない日です。</span>
+  </p>
+<p>
+  地区ファイル：<a href="calendar_no_list.json " target="_blank">calendar_no_list.json </a>
+</p>
+      
+<p>
+注）
+<ul>
+<li>カレンダー番号26番以降（旧豊野、戸隠、大岡、鬼無里、中条等）は元ネタのxlsxの内容が異なるためjsonに含めていません</li>
+<li>parserのソースは<a href="https://github.com/koty/nagano_gomi_calendar" target="_blank">こちら</a></li>
+<li>このデータを使ってアプリを作りました。
+  <ul>
+    <li><a href="https://play.google.com/store/apps/details?id=jp.koty.nagano_gomi_oshirase2" target="_blank">Androidアプリ</a>。
+ソースコードは<a href="https://github.com/koty/NaganoGomiOshirase2" target="_blank">こちら</a>です。</li>
+    <li><a href="https://www.amazon.co.jp/dp/B07DPKSP3R/">Alexaスキル</a>（レビューがひどいことになっていますが、改善しているところもあります。。。）</li>
+  </ul>
+</li>
+</ul>
+</p>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-10735698-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</body>
+</html>
