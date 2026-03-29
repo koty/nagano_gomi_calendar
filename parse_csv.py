@@ -56,9 +56,9 @@ def parse_as_object():
 
     calendar_dic = {}  # key: カレンダーNo、value, GomiCalendarレコード
     for i in range(1, 25):
-        # ローカルファイルの ./令和7年度ごみ収集カレンダー/gomi_calendar_2025_{#i}.csv から読み込む
+        # ローカルファイルの ./令和7年度ごみ収集カレンダー/gomi_calendar_2026_{#i}.csv から読み込む
         # 元ネタは https://www.city.nagano.nagano.jp/n023500/contents/p006280.html
-        df = pd.read_csv(f'./cal2025/gomi_calendar_2025_{i}.csv', header=None, encoding="utf-8")
+        df = pd.read_csv(f'./cal2026/gomi_calendar_2026_{i}.csv', header=None, encoding="utf-8")
         data = df.T
         calendar_list = []
 
